@@ -16,6 +16,7 @@ dist_elvi_SCRIPTS	= \
 		  bbcnews \
 		  bookfinder \
 		  bugmenot \
+                  cablesearch \
 		  cia \
 		  cite \
 		  cliki \
@@ -25,6 +26,7 @@ dist_elvi_SCRIPTS	= \
 		  ctan \
 		  currency \
 		  cve \
+                  ddg \
 		  debbugs \
 		  debcontents \
 		  deblists \
@@ -70,6 +72,7 @@ dist_elvi_SCRIPTS	= \
 		  netbsd \
 		  ntrs \
 		  openbsd \
+                  openports \
 		  pasearch \
 		  piratebay \
 		  pgpkeys \
