@@ -50,7 +50,7 @@ w3_parse_args "$@"
 
 escaped_args=`w3_url_of_arg $w3_args`
 
-if -z $SURFRAW_openports_stype ; then
+if test -z $SURFRAW_openports_stype ; then
     url="${SURFRAW_openports_search}so=${escaped_args}"
 else
     url="${SURFRAW_openports_search}stype=${SURFRAW_openports_stype}&so=${escaped_args}"
