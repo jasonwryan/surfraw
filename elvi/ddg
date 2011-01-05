@@ -1,5 +1,5 @@
 #!/bin/sh
-# elvis: ddg            -- search duckduckgo
+# elvis: ddg            -- Search the web using duckduckgo (www.duckduckgo.com)
 # coder@kyleisom.net 20110105
 # relevant: https://duckduckgo.com/params.html
 . surfraw || exit 1
@@ -52,7 +52,7 @@ w3_parse_args "$@"
 if [ "${SURFRAW_ddg_https_arg}" = 0 ] ; then
     SURFRAW_ddg_base_url="https://${SURFRAW_ddg_base_url}"
 else
-    SURFRAW_ddg_base_url="http://${SURFRAW_ddg_base_url}
+    SURFRAW_ddg_base_url="http://${SURFRAW_ddg_base_url}"
 fi
 
 # need to send the user to the non-javascript version if using a non-graphical
@@ -75,7 +75,7 @@ fi
 
 escaped_args=`w3_url_of_arg $w3_args`
 if [ "$SURFRAW_ddg_got_a_ducky_feeling" = 1 ]; then
-    escaped_args="! ${escaped args}""
+    escaped_args="! ${escaped args}"
 fi
 
 w3_browse_url "${SURFRAW_ddg_base_url}/?q=${escaped_args}${SURFRAW_ddg_params}"
