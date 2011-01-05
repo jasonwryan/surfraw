@@ -4,17 +4,22 @@
 . surfraw || exit 1
 
 w3_config_hook () {
-    def   SURFRAW_ddg "$SURFRAW_results"
-    def   SURFRAW_ddg search
+    def     SURFRAW_ddg "$SURFRAW_results"
+    def     SURFRAW_ddg search
+    defyn   SURFRAW_ddg_secure_arg
+    defyn   SURFRAW_ddg_safe_arg
+    defyn   SURFRAW_ddg_redirect_arg
 }
 
 w3_usage_hook () {
     cat <<EOF
 Usage: $w3_argv0 [options] [search words]...
 Description:
-  Surfraw search the web using Google (www.google.com)
+  Surfraw search the web using DuckDuckGo (www.duckduckgo.com)
 Local options:
+    -d,-redirect                use redirection
     -s,-secure                  use the SSL search
+    -p,-safe                    enable safe search
 EOF
     w3_global_usage
 }
@@ -23,7 +28,9 @@ w3_parse_option_hook () {
     opt="$1"
     optarg="$2"
     case "$opt" in
-    -s|-sec*)           setoptyn    SURFRAW_ddg_https;;
+    -s|-sec*)           setoptyn    SURFRAW_ddg_https_arg       1 ;;
+    -p|-safe*)		setoptyn    SURFRAW_ddg_safe_arg        1 ;;
+    -d|-redirect*)      setoptyn    SURFRAW_ddg_redirect_arg    1 ;;
     *) return 1 ;;
     esac
     return 0
