@@ -1,7 +1,6 @@
 #!/bin/sh
 # elvis: openports      -- search openports for OpenBSD packages
 # coder@kyleisom.net 20110105
-# relevant: https://duckduckgo.com/params.html
 . surfraw || exit 1
 
 w3_config_hook () {
