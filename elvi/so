@@ -19,7 +19,7 @@ Usage: $w3_argv0 [options] [search words]...
 Description:
   Surfraw search the web using DuckDuckGo (www.duckduckgo.com)
 Local options:
-    -a,-ask             ask a question
+    -a,-ask             ask a question (requires javascript)
     -q,-questions       show all questions
     -t,-tag             display the tag associated with the search term
     -u,-unanswered      display unanswered questions
@@ -34,7 +34,7 @@ w3_parse_option_hook () {
     -a*)            setoptyn    SURFRAW_sx_ask          1           ;;
     -q*)            setoptyn    SURFRAW_sx_q            1           ;;
     -t*)            setoptyn    SURFRAW_sx_tag          1           ;;
-    -u*)            setopyn     SURFRAW_sx_unanswered   1           ;;
+    -u*)            setoptyn    SURFRAW_sx_unanswered   1           ;;
     *) return 1 ;;
     esac
     return 0
@@ -54,15 +54,17 @@ elif [ "$SURFRAW_sx_unanswered" = 1 ]; then
 elif [ "$SURFRAW_sx_q" = 1 ]; then
     search="questions"
     excaped_args=""
-elif [ "$SURFRAW_sx_ask" = 1]; then
+elif [ "$SURFRAW_sx_ask" = 1 ]; then
     search="questions/ask"
     escaped_args=""
 else
     search="search?q="
 fi
 
-search="search?q="
+echo "search: $search"
+echo "sargs: $escaped_args"
 url="http://stackoverflow.com/${search}${escaped_args}"
+echo "url: $url"
 
 echo "w3_browse_url $url"
 w3_browse_url $url
