@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 2011-01-05  Kyle Isom <coder@kyleisom.net>
         * new elvis: cablesearch, ddg, openports
+=======
+2011-01-12  Kyle Isom  <coder@kyleisom.net>
+
+	* New elvi:
+	  + cablesearch - search wikileaks cables
+	  + duckduckgo - replace with better implementation
+	  + openports - search openbsd ports
+
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 2010-12-04  Jakob <jakob@pipefour.org>
 
 	* new elvis: pasearch.

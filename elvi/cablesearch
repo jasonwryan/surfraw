@@ -1,5 +1,9 @@
 #!/bin/sh
+<<<<<<< HEAD
 # elvis: openports      -- search openports for OpenBSD packages
+=======
+# elvis: cablesearch	-- search openports for OpenBSD packages
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 # coder@kyleisom.net 20110105
 . surfraw || exit 1
 
@@ -15,12 +19,17 @@ Usage: $w3_argv0 [options] [search words]...
 Description:
     Search leaked diplomatic cables.
 Local options:
+<<<<<<< HEAD
   If you can read this, it means your hard drive has already been wiped and 
+=======
+  If you can read this, it means your hard drive has already been wiped and
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
   the NSA alerted to your conniving schemes.
 EOF
     w3_global_usage
 }
 
+<<<<<<< HEAD
 w3_parse_option_hook () {
     opt="$1"
     optarg="$2"
@@ -31,11 +40,17 @@ w3_parse_option_hook () {
     return 0
 }
 
+=======
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 w3_config
 w3_parse_args "$@"
 # w3_args now contains a list of arguments
 
 escaped_args=`w3_url_of_arg $w3_args`
 
+<<<<<<< HEAD
 url="${SURFRAW_cablesearch}?q=${escaped_args}"    
+=======
+url="${SURFRAW_cablesearch}?q=${escaped_args}"
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 w3_browse_url $url

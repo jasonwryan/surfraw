@@ -16,7 +16,11 @@ dist_elvi_SCRIPTS	= \
 		  bbcnews \
 		  bookfinder \
 		  bugmenot \
+<<<<<<< HEAD
                   cablesearch \
+=======
+		  cablesearch \
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  cia \
 		  cite \
 		  cliki \
@@ -72,7 +76,11 @@ dist_elvi_SCRIPTS	= \
 		  netbsd \
 		  ntrs \
 		  openbsd \
+<<<<<<< HEAD
                   openports \
+=======
+		  openports \
+>>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  pasearch \
 		  piratebay \
 		  pgpkeys \
