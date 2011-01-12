@@ -6,7 +6,6 @@
 w3_config_hook () {
     def     SURFRAW_sx_results      "$SURFRAW_results"
     def     SURFRAW_sx_search       search
-    defyn   SURFRAW_sx_tag          0
     defyn   SURFRAW_sx_q            0
     defyn   SURFRAW_sx_tag          0
     defyn   SURFRAW_sx_unanswered   0
@@ -17,7 +16,7 @@ w3_usage_hook () {
     cat <<EOF
 Usage: $w3_argv0 [options] [search words]...
 Description:
-  Surfraw search the web using DuckDuckGo (www.duckduckgo.com)
+  Surfraw search stackoverflow.com
 Local options:
     -a,-ask             ask a question (requires javascript)
     -q,-questions       show all questions
