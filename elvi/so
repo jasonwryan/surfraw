@@ -6,7 +6,6 @@
 w3_config_hook () {
     def     SURFRAW_sx_results      "$SURFRAW_results"
     def     SURFRAW_sx_search       search
-    def     SURFRAW_sx_site         "www"
     defyn   SURFRAW_sx_tag          0
     defyn   SURFRAW_sx_q            0
     defyn   SURFRAW_sx_tag          0
@@ -22,7 +21,6 @@ Description:
 Local options:
     -a,-ask             ask a question
     -q,-questions       show all questions
-    -s,-site            search a specific subsite
     -t,-tag             display the tag associated with the search term
     -u,-unanswered      display unanswered questions
 EOF
@@ -36,7 +34,6 @@ w3_parse_option_hook () {
     -a*)            setoptyn    SURFRAW_sx_ask          1           ;;
     -q*)            setoptyn    SURFRAW_sx_q            1           ;;
     -t*)            setoptyn    SURFRAW_sx_tag          1           ;;
-    -s*)            setopt      SURFRAW_sx_site         $optarg     ;;
     -u*)            setopyn     SURFRAW_sx_unanswered   1           ;;
     *) return 1 ;;
     esac
@@ -65,7 +62,7 @@ else
 fi
 
 search="search?q="
-url="http://${SURFRAW_sx_site}.stackoverflow.com/${search}${escaped_args}"
+url="http://stackoverflow.com/${search}${escaped_args}"
 
 echo "w3_browse_url $url"
 w3_browse_url $url
