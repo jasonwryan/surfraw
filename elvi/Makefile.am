@@ -82,6 +82,7 @@ dist_elvi_SCRIPTS	= \
 		  openports \
 >>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  pasearch \
+		  pin  \
 		  piratebay \
 		  pgpkeys \
 		  port \
