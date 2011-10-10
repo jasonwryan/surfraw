@@ -169,7 +169,7 @@ bookmark_file_search () {
 	file="$2"
 	if [ -r "$file" ]
 	then
-		@AWK@ -v search="$search" '$1 ~ search { print $2; }'  $file | head -n 1
+		@AWK@ -v search="$search" '$1 == search { print $2; }'  $file | head -n 1
 	fi
 }
 
@@ -294,7 +294,7 @@ Global options:
   -version			Display Surfraw version ($surfraw_version)
   --				End of options
 Copyright:
-  Copyright (c) 2003-2010 The Surfraw-Devel Team
+  Copyright (c) 2003-2011 The Surfraw-Devel Team
                            <surfraw-devel@lists.alioth.debian.org>
   Copyright (c) 2000-2001 Julian Assange <proff@iq.org>
   Copyright (c) 2001 Australian Institute for Collaborative Research
@@ -317,7 +317,7 @@ w3_parse_option_hook () {
 
 list_elvi() {
     local dir="$1"
-    sed -n 's/^.*elvis: \(.*\)$/\1/p' $(find "$dir" ! -type d ! -type l ! -name '*~' | sort)
+    sed -n 's/^.*elvis:[ 	]\+\(.*\)$/\1/p' $(find "$dir" ! -type d ! -type l ! -name '*~' | sort)
     for script in $(find "$dir" ! -type d -type l | sort) ; do
 	printf '%-16s--> %s\n' $(basename "$script") $(basename $(readlink "${script}"))
     done
@@ -564,7 +564,7 @@ then
 				w3_browse_url "$bookmark"
 			else
 				echo "`basename $0`: $elvi: No elvis or bookmark with that name"
-				surfraw_usage
+				surfraw_usage >&2
 				exit 1
 			fi
 	   fi

@@ -1,7 +1,196 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2011-01-05  Kyle Isom <coder@kyleisom.net>
         * new elvis: cablesearch, ddg, openports
 =======
+=======
+2011-10-10  Ian Beckwith  <ianb@erislabs.net>
+
+	* surfraw.IN: test_elvi(): tweak sed regex
+	* add tests for f5, cisco and pin.
+
+2011-10-10  Shain Singh <shain.singh@gmail.com>
+
+	* New elvi: f5, cisco
+
+2011-10-10  Jason Ryan  <jasonwryan@gmail.com>
+
+	* New elvi: pin (search pinboard.in).
+
+2011-09-09  Kyle Isom  <coder@kyleisom.net>
+
+        * New elvi: wolfram - query Wolfram Alpha
+        * Author: Kyle Isom <coder@kyleisom.net>
+        * Added test for wolfram.
+
+2011-08-09  Ian Beckwith  <ianb@erislabs.net>
+
+	* New elvi: priberam - search Portuguese dictionary.
+	  Author: Paulo Almeida <paulo@diasalmeida.com>
+	* Added test for priberam.
+
+2011-07-11  Ian Beckwith  <ianb@erislabs.net>
+
+	* netbsd: fix normal & mail search.
+	  google custom searches were complaining I was a bot, so I
+	  switched to normal google searches with
+	  site:{mail-index,}.netbsd.org.
+	* cia: fix search URL
+
+2011-06-17  Ian Beckwith  <ianb@erislabs.net>
+
+	* arxiv: fix -scope=author with single-word queries.
+	  Thanks to Nikos Apostolakis.
+	* btw, note about entry below, netbsd make *does*
+	  support '$<', but only in suffix rules.
+
+2011-06-16  Ian Beckwith  <ianb@erislabs.net>
+
+	* Fix more make(1) portability problems.
+	  Either I am horribly confused or netbsd make
+	  (or at least pmake in debian) doesn't support '$<'.
+	  Switched to '$?'.
+	* Also switched submit-lsm rule to '$?'.
+	  Thanks to Kyle Isom.
+	* Removed long-obsolete commented-out sourceforge upload rules.
+
+2011-06-15  Ian Beckwith  <ianb@erislabs.net>
+
+	* scitopia, worldwidescience: fixed URLs.
+	* Fixed make portability problems.
+	  We cannot portably combine single suffix rules (foo.IN->foo)
+	  and separated dependencies so we have to explicitly specify
+	  all the .IN rules. The solution we used for this until now was
+	  specific to GNU make.
+	* Removed Makefile.include, no longer used.
+	* './configure --enable-opensearch' now only controls
+	  installation of the (direct) dependencies for opensearch,
+	  not opensearch itself, as opensearch now falls back to
+	  using a remote reflector if opensearch-discover(1)
+	  and opensearch-genquery(1) aren't found.
+	* yandex: fix test.
+
+2011-06-14  Ian Beckwith  <ianb@erislabs.net>
+
+	* musicbrainz, codesearch, rpmsearch: Fixed URLs, options and
+	  tests. The sites have all changed significantly which means
+	  both new options and no-longer-supported options.
+	  Codesearch has gone all ajaxy, so I've implemented the options
+	  via the search string, e.g. adding " package:foo".
+	  Disabled codesearch.test, as it now needs javascript.
+	  Codesearch on both google.com and google.co.uk was acting up,
+	  so I've pointed it at google.fr.
+	* Removed filesearching elvi, it now requires a 'Referer:' header
+	  to work. There is no browser-portable way to specify a
+	  'Refer[r]er:' header, plus we should probably take it as a hint.
+	* Tweaked debian packaging.
+	* Updated NEWS.
+
+2011-06-13  Ian Beckwith  <ianb@erislabs.net>
+
+	* w3link: fixed URLs.
+
+2011-06-10  Ian Beckwith  <ianb@erislabs.net>
+
+	* Fixed ctan.
+	  Option -doc has been replaced by -id.
+	  Options are no longer mutually exclusive,
+	  you can now do (eg) ctan -d -i -n texlive.
+
+2011-06-09  Ian Beckwith  <ianb@erislabs.net>
+
+	* fixed tests: debwiki, ntrs, wayback.
+
+2011-06-07  Ian Beckwith  <ianb@erislabs.net>
+
+	* Default to surfraw_graphical_remote=no,
+	  as chromium doesn't support "-remote openURL".
+
+2011-05-31  Jason Ryan  <jasonwryan@gmail.com>
+
+	* Add options to archpkg.
+
+2011-05-12  Sara Fauzia  <sara@archlinux.us>
+
+	* Fix archpkg URL.
+
+2011-05-12  Ian Beckwith  <ianb@erislabs.net>
+
+	* surfraw.IN:
+	  + if elvi doesn't exist, send usage to stderr not stdout.
+	  + bookmark names: do exact match not substring match.
+	* Added tests for archwiki, deli & stack.
+	* README:
+	  + added INTEGRATION section on uzbl and pentadactyl.
+	  + upcased section headings for clarity.
+
+2011-05-12  Jason Ryan  <jasonwryan@gmail.com>
+
+	* New elvi:
+	  + archwiki: search the arch wiki.
+	  + deli: search delicious.com.
+	  + stack: search stackoverflow.com and friends.
+
+2011-03-21  Ian Beckwith  <ianb@erislabs.net>
+
+	* google: Added -safe=default|off|moderate|strict
+	  option for Safe Search.
+
+2011-03-21  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* Added Google Translate to elvi/translate.
+
+2011-03-03  Ian Beckwith  <ianb@erislabs.net>
+
+	* opensearch: new option -r, uses redirector at
+	  http://erislabs.net/ianb/webtools/opensearch/ instead of calling
+	  opensearch-discover and opensearch-genquery. -r is selected
+	  automatically if those tools are not installed. This enables us
+	  to ship opensearch in the main surfraw package and it still
+	  functions if the dependencies are not installed. See
+	  debian/changelog.
+	* wikipedia: new options:
+	  + -d, uses a redirector at http://erislabs.net/ianb/webtools/wpdp/
+	    This redirector searches for a page with that name at wikipedia.
+ 	    If not found, it searches deletionpedia, if not found there
+	    it falls back to a normal wikipedia search.
+	  + -f=w|d, -fallback=wikipedia|deletionpedia
+	    Implies -d. If page not found at either wikipedia or deletionpedia,
+            whether to fallback to wikipedia search or deletionpedia search.
+	* google:
+	  + support video, maps and news.
+	  + new options -i, -v, -m, -n, shortcuts for
+	    -search={images,videos,maps,news}.
+	* debcontents, debpackages: update docs for new arches and
+	  distributions.
+	* bugzilla:
+	  + fix url so it works with redhat & eclipse bugzillas too.
+	  + enable -s=redhat.
+	* ixquick, w3css: fix tests.
+	* opensearch, wikipedia: add redirector tests.
+
+2011-02-20  Ian Beckwith  <ianb@erislabs.net>
+
+	* New elvi: bugzilla - searches various bugzillas,
+	  defaults to kernel.
+	* pgpkeys: add more options, support more
+	  keyservers, default to sks-keyservers.net.
+	* bump version to 2.2.8.
+	* test/Makefile.am: add cablesearch.test.
+
+2011-02-19  Ian Beckwith  <ianb@erislabs.net>
+
+	* lastfm: fix url to avoid a redirect that mangled
+	  args with spaces.
+	* debbugs: add -s as an alias for -search=src.
+	* surfraw.IN: (finally) update copyright year to 2011.
+	* remove traces of port elvi from build system.
+
+2011-02-09  Kyle Isom <coder@kyleisom.net>
+
+        * fix a number of tests to match current site formats
+
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 2011-01-12  Kyle Isom  <coder@kyleisom.net>
 
 	* New elvi:

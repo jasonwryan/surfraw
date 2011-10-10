@@ -8,6 +8,7 @@ dist_elvi_SCRIPTS	= \
 		  alioth \
 		  amazon \
 		  archpkg \
+		  archwiki \
 		  arxiv \
 		  ask \
 		  aur \
@@ -17,11 +18,16 @@ dist_elvi_SCRIPTS	= \
 		  bookfinder \
 		  bugmenot \
 <<<<<<< HEAD
+<<<<<<< HEAD
                   cablesearch \
 =======
+=======
+		  bugzilla \
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 		  cablesearch \
 >>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  cia \
+		  cisco \
 		  cite \
 		  cliki \
 		  cnn \
@@ -42,14 +48,15 @@ dist_elvi_SCRIPTS	= \
 		  debvcsbrowse \
 		  debwiki \
 		  deja \
+		  deli \
 		  discogs \
 		  dmoz \
 		  duckduckgo \
 		  ebay \
 		  etym \
 		  excite \
+		  f5 \
 		  foldoc \
-		  filesearching \
 		  finkpkg \
 		  freebsd \
 		  freedb \
@@ -80,12 +87,18 @@ dist_elvi_SCRIPTS	= \
                   openports \
 =======
 		  openports \
+<<<<<<< HEAD
 >>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  pasearch \
 		  pin  \
+=======
+		  opensearch \
+		  pasearch \
+		  pin \
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 		  piratebay \
 		  pgpkeys \
-		  port \
+		  priberam \
 		  pubmed \
 		  rae \
 		  rfc \
@@ -101,6 +114,7 @@ dist_elvi_SCRIPTS	= \
 		  slinuxdoc \
 		  sourceforge \
 		  springer \
+		  stack \
 		  stockquote \
 		  sunonesearch \
 		  thesaurus \
@@ -115,15 +129,12 @@ dist_elvi_SCRIPTS	= \
 		  wetandwild \
 		  wikipedia \
 		  woffle \
+                  wolfram \
 		  worldwidescience \
 		  yahoo \
 		  yandex \
 		  youtube \
 		  yubnub
-
-if OPENSEARCH
-dist_elvi_SCRIPTS	+= opensearch
-endif
 
 uninstall-local:
 	-rmdir $(DESTDIR)$(PREFIX)/$(ELVIDIR)

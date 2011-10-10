@@ -11,7 +11,7 @@ if OPENSEARCH
 man_MANS += opensearch-discover.1 opensearch-genquery.1
 endif
 EXTRA_DIST	= surfraw.lsm.in surfraw.IN surfraw-update-path.IN\
-                  surfraw.spec.in aclocal.m4 HACKING Makefile.include \
+                  surfraw.spec.in aclocal.m4 HACKING  \
 		  surfraw.1.IN elvi.1sr.IN surfraw.bookmarks links.IN \
 		  surfraw-bash-completion.IN surfraw.conf.IN \
 		  $(devel_extra)
@@ -22,25 +22,68 @@ CLEANFILES = surfraw surfraw-update-path surfraw-update-path.1 surfraw.spec surf
 
 BUILT_SOURCES = surfraw.conf
 
+# we cannot portably combine single suffix rules and separated dependencies
+# so we have to explicitly specify all the .IN rules
+
 surfraw: surfraw.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@VERSION\@,${VERSION},g; '\
+	    -e 's,@ELVIDIR\@,${ELVIDIR},g; '\
+	    -e 's,@AWK\@,${AWK},g; '\
+	    -e 's,@sysconfdir\@,${sysconfdir},g ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 surfraw.conf: surfraw.conf.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@prefix\@,${prefix},g; '\
+	    -e 's,@TEXTBROWSER\@,${TEXTBROWSER},g; '\
+	    -e 's,@GRAPHICALBROWSER\@,${GRAPHICALBROWSER},g; ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 surfraw-update-path: surfraw-update-path.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@ELVIDIR\@,${ELVIDIR},g; ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 surfraw-bash-completion: surfraw-bash-completion.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@ELVIDIR\@,${ELVIDIR},g; ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 elvi.1sr: elvi.1sr.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@ELVIDIR\@,${ELVIDIR},g; ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 surfraw.1: surfraw.1.IN
-
-surfraw-update-path.1 opensearch-discover.1 opensearch-genquery.1: %.1: %
-	-rm -f $@
-	pod2man $< > $@
+	-rm -f $@ $@.tmp
+	sed -e 's,@ELVIDIR\@,${ELVIDIR},g; '\
+	    -e 's,@sysconfdir\@,${sysconfdir},g' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
 links: links.IN
+	-rm -f $@ $@.tmp
+	sed -e 's,@mandir\@,${mandir},g; ' $? > $@.tmp
+	chmod +x $@.tmp
+	mv $@.tmp $@
 
-include $(top_srcdir)/Makefile.include
+surfraw-update-path.1: surfraw-update-path
+	-rm -f $@
+	pod2man $? > $@
+
+ opensearch-discover.1: opensearch-discover
+	-rm -f $@
+	pod2man $? > $@
+
+opensearch-genquery.1: opensearch-genquery
+	-rm -f $@
+	pod2man $? > $@
 
 install-data-hook: links
 	chmod -x surfraw.conf elvi.1sr surfraw.1
@@ -51,9 +94,6 @@ install-data-hook: links
 	do \
 		ln -sf $$target  $(DESTDIR)/$$link ;\
 	done < links
-if OPENSEARCH
-	ln -sf elvi.1sr.gz $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
-endif
 if INSTALLSR
 	ln -sf surfraw $(DESTDIR)/@bindir@/sr
 	ln -sf surfraw.1.gz $(DESTDIR)/@mandir@/man1/sr.1.gz
@@ -68,9 +108,6 @@ uninstall-local: links
 	do \
 		rm -f $(DESTDIR)/$$link ;\
 	done < links
-if OPENSEARCH
-	rm -f $(DESTDIR)/@mandir@/man1/opensearch.1sr.gz
-endif
 if INSTALLSR
 	rm -f $(DESTDIR)/@bindir@/sr
 	rm -f $(DESTDIR)/@mandir@/man1/sr.1.gz
@@ -78,19 +115,9 @@ endif
 
 
 submit-lsm: surfraw.lsm
-	mail -s add LSM@qqx.org < $<
+	mail -s add LSM@qqx.org < $?
 
 test: all surfraw.conf
 	make -C test test
 
 .PHONY: test
-
-
-#htdocs: index.html
-#	scp index.html surfraw.sourceforge.net:/home/groups/s/su/surfraw/htdocs/index.html
-#README: index.html
-#	st=`stty -g`; stty cols 80; lynx -dump $< >$@ || rm -f $@; stty $$st
-#ftp:
-#	scp $(PACKAGE)-$(VERSION).tar.gz proff@ftp.netbsd.org:/pub/NetBSD/misc/proff/
-#download:
-#	ncftpput -F download.sourceforge.net /incoming $(PACKAGE)-$(VERSION).tar.gz

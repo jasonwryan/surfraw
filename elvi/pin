@@ -18,12 +18,25 @@ Description:
     Surfraw search Pinboard bookmarks (http://pinboard.in)
 
     Local options:
+<<<<<<< HEAD
     -popular    |  -p  Search popular tags
     -recent     |  -r  Search recent tags
 
     -tags=TAGS  |  -t=TAGS  Search tags (separate TAGS with "+" eg., unix+linux)
     -user=NAME  |  -u=NAME  Search a user's bookmarks
                     Default: tags
+=======
+    Default search (without any options) includes tags, titles and descriptions 
+    and is not limited to a specific number of search terms.
+
+    -popular    |  -p  Search popular tags
+    -recent     |  -r  Search recent tags
+
+    -tags=TAGS  |  -t=TAGS  Only search tags (separate a maximum of 3 TAGS with 
+                   a "+" eg., unix+linux)
+    -user=NAME  |  -u=NAME  Search a user's bookmarks
+                    
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
                                        
 EOF
     w3_global_usage
@@ -44,7 +57,11 @@ w3_parse_option_hook () {
 
 # create tag string
 tags () {    
+<<<<<<< HEAD
     local IFS="+"
+=======
+    local IFS=+
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 
     for tag in $SURFRAW_pinboard_tags; do
         printf "%s" "t:$tag/"
@@ -54,8 +71,14 @@ tags () {
 
 w3_config
 w3_parse_args "$@"
+<<<<<<< HEAD
 # w3_args now contains a list of arguments
 
+=======
+
+# w3_args now contains a list of arguments
+escaped_args=$(w3_url_of_arg $w3_args)
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 base_url="https://pinboard.in/"
 
 # check for recent & popular
@@ -81,10 +104,16 @@ if [ -z "$w3_args" ]; then
     fi
 
 elif [ -n "$w3_args" ]; then
+<<<<<<< HEAD
     escaped_args=$(w3_url_of_arg $w3_args)
+=======
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
     w3_browse_url "${base_url}search/?query=${escaped_args}&all=Search+All"
 
 else
     w3_browse_url "${base_url}"
 fi
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8

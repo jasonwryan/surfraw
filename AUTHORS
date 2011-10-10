@@ -8,8 +8,8 @@ Christian Surchi <csurchi@debian.org>
         elvi: debcontents, debbugs, debpackages
 
 Ian Beckwith <ianb@erislabs.net>
-        elvi: alioth, bbcnews, deblists, freedb, imdb, scpan,
-              port, codesearch, debwiki, lastfm, musicbrainz,
+        elvi: alioth, bbcnews, bugzilla, deblists, freedb, imdb,
+              scpan, codesearch, debwiki, lastfm, musicbrainz,
               opensearch, scholar, ctan, fsfdir, gutenberg, wayback,
               dmoz, w3html, w3link, w3css, w3rdf, debpts, rfc,
               sunonesearch, lsm, finkpkg, rpmsearch, macports,
@@ -115,11 +115,28 @@ Jakob <jakob@pipefour.org>
 
 Kyle Isom <coder@kyleisom.net>
 <<<<<<< HEAD
+<<<<<<< HEAD
         elvi: cablesearch, ddg, openports
 =======
         elvi: cablesearch, duckduckgo, openports
 
 >>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
+=======
+        elvi: cablesearch, duckduckgo, openports, wolfram
+	plus fixes.
+
+Jason Ryan <jasonwryan@gmail.com>
+        elvi: archwiki, deli, stack, pin
+
+Sara Fauzia <sara@archlinux.us>
+        archpkg fix.
+
+Paulo Almeida <paulo@diasalmeida.com>
+        elvi: priberam
+
+Shain Singh <shain.singh@gmail.com>
+        elvi: cisco, f5 
+>>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 
 THANKS TO
 
@@ -137,5 +154,7 @@ Andy Valencia          <ajv-914-325-0787@vsta.org>
 Philip Armstrong       <phil@kantaka.co.uk>
 Dan Jacobson           <jidanni@jidanni.org>
 Sunil Nimmagadda       <sunil@devio.us>
+Michel                 <synth17+deb-bugs@gmail.com>
+Nikos Apostolakis      <nikos.ap@gmail.com>
 
 If we've missed anyone, let us know.

@@ -21,17 +21,21 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr -sysconfdir=/etc --mandir=\$${prefix}/share/man --with-text-browser=www-browser --with-graphical-browser=sensible-browser
+	./configure --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --prefix=/usr -sysconfdir=/etc --mandir=\$${prefix}/share/man --with-text-browser=www-browser --with-graphical-browser=sensible-browser AWK=awk
 
 	touch configure-stamp
 
-build: build-stamp
+build: build-arch build-indep
+
+build-arch: build-stamp
+
+build-indep: build-stamp
 
 build-stamp: configure-stamp 
 	dh_testdir
 
 	# Add here commands to compile the package.
-	$(MAKE) 
+	$(MAKE)
 
 	touch build-stamp
 
@@ -82,17 +86,3 @@ binary-indep: build install
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
