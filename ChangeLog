@@ -1,9 +1,21 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-2011-01-05  Kyle Isom <coder@kyleisom.net>
-        * new elvis: cablesearch, ddg, openports
-=======
-=======
+2012-06-01  Jason Ryan <jasonwryan@surfraw.org>
+
+	* New elvi: github (search github.com)
+
+2012-03-17  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* Fix a typo in duckduckgo code.
+
+2012-03-17  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* Keep duckduckgo's -l[ucky] from clobbering -lh
+
+2012-01-10  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* aur: now uses HTTPS by default
+	  + On the AUR, connecting via HTTP disables login.
+	  + Added switch -no-https to enable connection via plain HTTP
+
 2011-10-10  Ian Beckwith  <ianb@erislabs.net>
 
 	* surfraw.IN: test_elvi(): tweak sed regex
@@ -190,7 +202,6 @@
 
         * fix a number of tests to match current site formats
 
->>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 2011-01-12  Kyle Isom  <coder@kyleisom.net>
 
 	* New elvi:
@@ -198,7 +209,6 @@
 	  + duckduckgo - replace with better implementation
 	  + openports - search openbsd ports
 
->>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 2010-12-04  Jakob <jakob@pipefour.org>
 
 	* new elvis: pasearch.
@@ -516,7 +526,7 @@
 
 2009-02-27  Ian Beckwith  <ianb@erislabs.net>
 
-	* New elvis: aur. Thanks to René Reigel.
+	* New elvis: aur. Thanks to RenÃ© Reigel.
 
 2008-12-03  Ian Beckwith  <ianb@erislabs.net>
 
