@@ -1,4 +1,33 @@
-2012-06-01  Jason Ryan <jasonwryan@surfraw.org>
+2012-06-28  Manolo Martínez  <manolo@austrohungaro.com>
+
+	* examples/hooks.lua: Added elinks integration script
+
+2012-06-28  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* Further simplified searchable bookmarks
+
+2012-06-28  Thomas Zervogiannis <tzervo@gmail.com>
+
+	* Simplified searchable bookmarks
+
+2012-06-27  Ivy Foster  <joyfulgirl@archlinux.us>
+
+	* Fixed arg parsing in searchable bookmarks
+	* New variable: SURFRAW_bookmark_search_elvis
+	  + When using searchable bookmarks, if all else fails
+	    run this elvis. Defaults to google
+	* Updated manual to reflect changes to bookmarks
+	* duckduckgo: Removed -p option. -safe still works.
+	  + Prevents clobbering global option -p[rint].
+
+2012-06-27  Thomas Zervogiannis <tzervo@gmail.com>
+
+	* Added searchable bookmarks
+
+	  + Bookmarks can now be searchable by adding '%s' to
+	    the url string.
+
+2012-06-01  Jason Ryan	<jasonwryan@surfraw.org>
 
 	* New elvi: github (search github.com)
 

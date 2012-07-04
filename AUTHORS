@@ -131,12 +131,18 @@ Jason Ryan <jasonwryan@surfraw.org>
 Sara Fauzia <sara@archlinux.us>
         archpkg fix.
 
+Thomas Zervogiannis <tzervo@gmail.com>
+        Searchable bookmarks.
+
 Paulo Almeida <paulo@diasalmeida.com>
         elvi: priberam
 
 Shain Singh <shain.singh@gmail.com>
         elvi: cisco, f5 
 >>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
+
+Manolo Martínez <manolo@austrohungaro.com>
+        examples: elinks integration (hooks.lua)
 
 THANKS TO
 
