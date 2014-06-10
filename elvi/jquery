@@ -1,6 +1,6 @@
 #!/bin/sh
-# $Id$
-# elvis: sunonesearch	-- Search Sun One Search (onesearch.sun.com)
+# elvis: jquery		-- Search the jQuery documentation (api.jquery.com)
+# ianb@erislabs.net 20130507
 
 . surfraw || exit 1
 
@@ -8,7 +8,7 @@ w3_usage_hook () {
     cat <<EOF
 Usage: $w3_argv0 [options] [search words]...
 Description:
-  Surfraw search Sun One Search (onesearch.sun.com)
+  Search the jQuery documentation (api.jquery.com)
 EOF
     w3_global_usage
 }
@@ -17,8 +17,8 @@ w3_config
 w3_parse_args "$@"
 # w3_args now contains a list of arguments
 if test -z "$w3_args"; then
-    w3_browse_url "http://onesearch.sun.com/"
+	w3_browse_url "http://api.jquery.com/"
 else
     escaped_args=`w3_url_of_arg $w3_args`
-    w3_browse_url "http://search.sun.com/search/onesearch/index.jsp?qt=${escaped_args}"
+    w3_browse_url "http://api.jquery.com?s=${escaped_args}"
 fi

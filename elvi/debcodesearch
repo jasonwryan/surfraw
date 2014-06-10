@@ -1,12 +1,13 @@
 #!/bin/sh
-# elvis: scitopia	-- Search for science with scitopia.org
+# ianb@erislabs.net 20130504
+# elvis: debcodesearch	-- Search debian source code
 . surfraw || exit 1
 
 w3_usage_hook () {
     cat <<EOF
 Usage: $w3_argv0 [options] [search words]...
 Description:
-  Surfraw search for science with scitopia.org
+  Search source code of debian packages
 EOF
     w3_global_usage
 }
@@ -14,10 +15,9 @@ EOF
 w3_config
 w3_parse_args "$@"
 # w3_args now contains a list of arguments
-
 if test -z "$w3_args"; then
-    w3_browse_url "http://www.scitopia.org/scitopia/"
+    w3_browse_url "http://codesearch.debian.net"
 else
     escaped_args=`w3_url_of_arg $w3_args`
-    w3_browse_url "http://www.scitopia.org/scitopia/result-list/fullRecord:${escaped_args}"
+    w3_browse_url "http://codesearch.debian.net/search?q=${escaped_args}"
 fi

@@ -2,6 +2,7 @@
 elvidir=$(ELVIDIR)
 
 dist_elvi_SCRIPTS	= \
+		  S \
 		  W \
 		  acronym \
 		  ads \
@@ -31,13 +32,13 @@ dist_elvi_SCRIPTS	= \
 		  cite \
 		  cliki \
 		  cnn \
-		  codesearch \
 		  comlaw \
 		  ctan \
 		  currency \
 		  cve \
                   ddg \
 		  debbugs \
+		  debcodesearch \
 		  debcontents \
 		  deblists \
 		  deblogs \
@@ -66,22 +67,26 @@ dist_elvi_SCRIPTS	= \
 		  genbugs \
 		  genportage \
 		  github \
-		  gutenberg \
+		  gmane \
 		  google \
-		  happypenguin \
+		  gutenberg \
 		  imdb \
 		  ixquick \
 		  jamendo \
 		  javasun \
+		  jquery \
 		  l1sp \
 		  lastfm \
 		  leodict \
 		  lsm \
 		  macports \
 		  mathworld \
+		  mdn \
 		  mininova \
 		  musicbrainz \
+		  mysqldoc \
 		  netbsd \
+		  nlab \
 		  ntrs \
 		  openbsd \
 <<<<<<< HEAD
@@ -94,11 +99,14 @@ dist_elvi_SCRIPTS	= \
 		  pin  \
 =======
 		  opensearch \
+		  oraclesearch \
 		  pasearch \
+		  pgdoc \
+		  pgpkeys \
+		  phpdoc \
 		  pin \
 >>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 		  piratebay \
-		  pgpkeys \
 		  priberam \
 		  pubmed \
 		  rae \
@@ -107,17 +115,14 @@ dist_elvi_SCRIPTS	= \
 		  rpmsearch \
 		  scholar \
 		  scicom \
-		  scitopia \
 		  scirus \
 		  scpan \
-		  scroogle \
 		  slashdot \
 		  slinuxdoc \
 		  sourceforge \
 		  springer \
 		  stack \
 		  stockquote \
-		  sunonesearch \
 		  thesaurus \
 		  translate \
 		  urban \
@@ -130,8 +135,9 @@ dist_elvi_SCRIPTS	= \
 		  wetandwild \
 		  wikipedia \
 		  woffle \
-                  wolfram \
+		  wolfram \
 		  worldwidescience \
+		  yacy \
 		  yahoo \
 		  yandex \
 		  youtube \

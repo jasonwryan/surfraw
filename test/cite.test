@@ -1,4 +1,4 @@
 cite functional
-\d+ documents found
+Functions
 cite -auth knuth
-\d+ documents found
+Results.*1 - 10

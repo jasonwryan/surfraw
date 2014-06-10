@@ -1,3 +1,130 @@
+2104-06-04  Jason Ryan <jasonwryan@gmail.com>
+	
+	* new elvi: nlab
+
+2013-12-10  Ian Beckwith  <ianb@erislabs.net>
+
+	* yandex: disabled test: redirects to captcha when used with LWP.
+	* Fix make distcheck: remove last traces of codesearch and scitopia.
+
+2013-12-09  Ian Beckwith  <ianb@erislabs.net>
+
+	* deja: disable tests, google groups now requires javascript.
+	* gmane: fix test.
+	* codesearch: removed, service shut down.
+	* scitopia: removed, service shut down.
+	* scicom: down, status unknown, made note in NEWS.
+
+2013-12-08  Ian Beckwith  <ianb@erislabs.net>
+
+	* new elvi: gmane
+	* openbsd -mail: use gmane (directly, not via gmane elvi)
+	* fix tests: ads, pgdoc, pin, yacy
+
+2013-10-27  Ian Beckwith  <ianb@erislabs.net>
+
+	* surfraw.IN: w3_custom_search_google: don't give full path to surfraw.
+	* pgdoc, wayback: fixed tests.
+
+2013-10-20  Ian Beckwith  <ianb@erislabs.net>
+
+	* new elvi: yacy: search using yacy p2p search.
+	  -S searches ScienceNet, a yacy-based science search engine.
+	* rae: fix url, remove -tipo option (no longer supported),
+	  disable test as there is now gratuitous javascript.
+
+2013-10-06  Ian Beckwith  <ianb@erislabs.net>
+
+	* Replaced phpdoc with version posted back in
+	  2011 by Jon Yamokoski <jon@jonyamo.net>
+	  Thanks, and apologies for missing it!
+	* S: add test.
+	* Include debian packaging in upstream tarball.
+
+2013-10-05  Ian Beckwith  <ianb@erislabs.net>
+
+	* ask, cisco: fix elvi.
+	* new elvi:
+	  + oraclesearch - Replaces removed sunonesearch <sigh>.
+	  + S - search using w3_custom_search.
+	* google: -g for groups clashed with -g for graphical browser.
+	  Invoke groups with -G, -gr, -groups or -search=groups.
+	* mdn: site invokes google custom search via gratuitous
+	  javascript, so switch to w3_custom_search.
+	* alioth: changed test to SKIP:, works OK but won't talk
+	  to LWP, hence test breaks.
+	* discogs, openbsd: fixed tests.
+	* mdn, mysqldoc, pgdoc, phpdoc: added tests.
+	* w3_custom_search:
+	  + document in README.
+	  + remove documentation for ixquick support.
+	    It still works(ish), but doesn't support enough features
+	    to support (eg) mysqldoc -v=.
+	  + add -custom-search= commandline option.
+	* updated copyright years to 2013.
+
+2013-09-30  Ian Beckwith  <ianb@erislabs.net>
+
+	* new elvi: mdn, mysqldoc, pgdoc, phpdoc
+	* new function: w3_custom_search
+	  Is used by elvi that use a generic search engine with (eg) site:
+	  or inurl: to narrow down the search.
+	  Pass it -s=site -u=url for site: and inurl: args
+	  plus the quoted search args
+	* new environment variable: SURFRAW_customsearch_provider
+	  to set provider used by w3_custom_search
+	  can be set to: google, duckduckgo or ixquick.
+	  Currently affects: mysqldoc, netbsd(*), openbsd(*), pgdoc,
+	  phpdoc, mysqldoc.
+	  (*) = only used by some options of elvi.
+	* new internal variable w3_shquoted_args, contains
+	  arguments 'quoted' 'like this' for passing
+	  to w3_custom_search
+	* Fixed url-encoding for '\'
+
+2013-05-07  Ian Beckwith  <ianb@erislabs.net>
+
+	* new elvi: jquery
+
+2013-05-04  Ian Beckwith  <ianb@erislabs.net>
+
+	* bump version to 2.2.9
+	* rae: fixed, at least as far as the test passing.
+	  Could really do with some love from someone who
+	  actually speaks spanish.
+	* ctan: fixed search, updated options.
+	  Note command-line options have changed.
+	* genportage: switch to gpo.zugaina.org
+	* debcodesearch: new (trivial) elvi for codesearch.debian.net
+	* jamendo: fix url, disable test (search now javascript)
+	* deli: fix url; remove options; disable test (search now javascript)
+
+2013-04-28  Ian Beckwith  <ianb@erislabs.net>
+
+	* musicbrainz: fixed mbid search.
+	* springer: fixed test.
+
+2013-04-27  Ian Beckwith  <ianb@erislabs.net>
+
+	* javasun: fixed test.
+
+2013-04-24  Ian Beckwith  <ianb@erislabs.net>
+
+	* Rewrote deblists for new xapian search.
+	  + -author, -lists, -lang no longer supported.
+	  + added -ml and -mv to show message id links and list view.
+	* Removed happypenguin. Currently defunct and they are talking
+	  about a rewrite, so when it is back it will need fixing anyway.
+
+2012-10-22  Ian Beckwith  <ianb@erislabs.net>
+
+	* Fixed elvi: cisco, slashdot, slinuxdoc.
+	* Removed elvi: scroogle (site gone).
+	* Fixed tests: acronym, bbcnews, bugzilla, cisco, cite[1],
+	  currency, discogs, excite, fsfdir, gcache, github, imdb,
+	  ixquick, lastfm, leodict, openbsd[2], scholar.
+	* test/Makefile.am: Added missing tests to EXTRA_DIST
+
 2012-06-28  Manolo Martínez  <manolo@austrohungaro.com>
 
 	* examples/hooks.lua: Added elinks integration script
