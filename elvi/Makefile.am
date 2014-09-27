@@ -33,6 +33,7 @@ dist_elvi_SCRIPTS	= \
 		  cliki \
 		  cnn \
 		  comlaw \
+		  commandlinefu \
 		  ctan \
 		  currency \
 		  cve \
