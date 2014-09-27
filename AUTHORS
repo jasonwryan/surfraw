@@ -116,14 +116,6 @@ Jakob <jakob@pipefour.org>
         elvi: pasearch
 
 Kyle Isom <coder@kyleisom.net>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        elvi: cablesearch, ddg, openports
-=======
-        elvi: cablesearch, duckduckgo, openports
-
->>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
-=======
         elvi: cablesearch, duckduckgo, openports, wolfram
         plus various fixes/maintenance.
 
@@ -142,7 +134,6 @@ Paulo Almeida <paulo@diasalmeida.com>
 
 Shain Singh <shain.singh@gmail.com>
         elvi: cisco, f5 
->>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 
 Manolo Martínez <manolo@austrohungaro.com>
         examples: elinks integration (hooks.lua)

@@ -18,15 +18,8 @@ dist_elvi_SCRIPTS	= \
 		  bbcnews \
 		  bookfinder \
 		  bugmenot \
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  cablesearch \
-=======
-=======
 		  bugzilla \
->>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 		  cablesearch \
->>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 		  cia \
 		  cisco \
 		  cite \
@@ -37,7 +30,6 @@ dist_elvi_SCRIPTS	= \
 		  ctan \
 		  currency \
 		  cve \
-                  ddg \
 		  debbugs \
 		  debcodesearch \
 		  debcontents \
@@ -90,15 +82,7 @@ dist_elvi_SCRIPTS	= \
 		  nlab \
 		  ntrs \
 		  openbsd \
-<<<<<<< HEAD
-                  openports \
-=======
 		  openports \
-<<<<<<< HEAD
->>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
-		  pasearch \
-		  pin  \
-=======
 		  opensearch \
 		  oraclesearch \
 		  pasearch \
@@ -106,7 +90,6 @@ dist_elvi_SCRIPTS	= \
 		  pgpkeys \
 		  phpdoc \
 		  pin \
->>>>>>> 8b80a8a424085aca817695bf9114055578fd20b8
 		  piratebay \
 		  priberam \
 		  pubmed \

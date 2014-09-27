@@ -1,9 +1,5 @@
 #!/bin/sh
-<<<<<<< HEAD
-# elvis: openports      -- search openports for OpenBSD packages
-=======
 # elvis: openports	-- search openports for OpenBSD packages
->>>>>>> 50d1344598e03bbc6362bdd6d42b569df353f068
 # coder@kyleisom.net 20110105
 . surfraw || exit 1
 
