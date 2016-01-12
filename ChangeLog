@@ -1,3 +1,13 @@
+2015-09-13  Kyle Isom <kyle@imap.cc>
+
+	* use awk instead of sed for listing elvi
+
+          This provides better cross-platform behaviour.
+
+2015-08-23  Jason Ryan <jasonwryan@gmail.com>
+
+	* new elvi: searx
+
 2014-09-20  Lucas Hoffmann <l-m-h at web.de>
 
 	* new elvi: commandlinefu
