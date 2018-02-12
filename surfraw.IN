@@ -1,7 +1,7 @@
 #!/bin/sh
 # Surfraw -- Shell Users' Revolutionary Front Against the World wide web
 #
-#  Copyright (c) 2003-2013 The Surfraw-Devel Team
+#  Copyright (c) 2003-2018 The Surfraw-Devel Team
 #                          <surfraw-devel@lists.alioth.debian.org>
 #  Copyright (c) 2000-2001 Julian Assange, placed into the public domain
 #  Copyright (c) 2000 Melbourne Institute for Advanced Study, placed into the public domain
@@ -160,7 +160,8 @@ setoptyn () {
 
 quote_ifs () {
 	 if [ -z "$1" ];   then return;  fi
-     perl -e '$ifs=$ENV{IFS} || " "; $arg=shift;if($arg =~/[$ifs]/) { $arg="\"$arg\""; } print "$arg\n"; ' -- "$1"
+     @PERL@ -e '$ifs=$ENV{IFS} || " "; $arg=shift;if($arg =~/[$ifs]/) { $arg="\"$arg\""; } print "$arg\n"; ' -- "$1"
+
 }
 
 bookmark_file_search () {

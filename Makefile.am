@@ -16,7 +16,7 @@ debian_extra = debian/NEWS debian/README.Debian debian/changelog debian/compat d
 				debian/surfraw-extra.files debian/surfraw-extra.install debian/watch
 
 EXTRA_DIST	= surfraw.lsm.in surfraw.IN surfraw-update-path.IN\
-                  surfraw.spec.in aclocal.m4 HACKING  \
+          surfraw.spec.in aclocal.m4 HACKING STYLE \
 		  surfraw.1.IN elvi.1sr.IN surfraw.bookmarks links.IN \
 		  surfraw-bash-completion.IN surfraw.conf.IN \
 		  $(devel_extra) $(debian_extra)
@@ -35,6 +35,7 @@ surfraw: surfraw.IN
 	sed -e 's,@VERSION\@,${VERSION},g; '\
 	    -e 's,@ELVIDIR\@,${ELVIDIR},g; '\
 	    -e 's,@AWK\@,${AWK},g; '\
+	    -e 's,@PERL\@,${PERL},g; '\
 	    -e 's,@sysconfdir\@,${sysconfdir},g ' $? > $@.tmp
 	chmod +x $@.tmp
 	mv $@.tmp $@
